@@ -21,7 +21,7 @@ class contactdetails(models.Model):
 	phone= models.CharField(max_length=12)
 	email= models.EmailField(max_length=40)
 	personal_profile = models.CharField(max_length=1000)
-
+	
 
 
 class educ(models.Model):

@@ -30,6 +30,18 @@ class contactdetailsform(forms.ModelForm):
 	class Meta:
 		model = contactdetails
 		fields ='__all__'
+		widgets = {
+		'author' : forms.TextInput(attrs={'class':'form-control'}),
+		'resume_name' : forms.TextInput(attrs={'class':'form-control'}),
+		'full_name' : forms.TextInput(attrs={'class':'form-control'}),
+		'position' : forms.TextInput(attrs={'class':'form-control'}),
+		'city' : forms.TextInput(attrs={'class':'form-control'}),
+		'state' : forms.TextInput(attrs={'class':'form-control'}),
+		'zipcode' : forms.TextInput(attrs={'class':'form-control'}),
+		'phone' : forms.TextInput(attrs={'class':'form-control'}),
+		'email' : forms.TextInput(attrs={'class':'form-control'}),
+		'personal_profile' : forms.TextInput(attrs={'class':'form-control'}),
+	}
 	
 
 

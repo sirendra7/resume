@@ -14,8 +14,10 @@ from django.urls import reverse_lazy
 
 
 
+
 @csrf_exempt
 def firstpage (request):
+	form = contactdetailsform(request.POST or None)
 	contactdetails.objects.all().delete()
 	educ.objects.all().delete()
 	workexp.objects.all().delete()
@@ -108,7 +110,7 @@ class EducationView(ListView):
 class UpdatepostViewjob(UpdateView):
 	model = workexp
 	template_name = 'updatepost.html'
-	form_class=jobform
+	fields = '__all__'
 
 
 class Deletepostviewjob(DeleteView):
@@ -122,7 +124,8 @@ class Deletepostviewjob(DeleteView):
 class UpdatepostView(UpdateView):
 	model = educ
 	template_name = 'updatepost.html'
-	form_class=Educationdetails
+	fields = ['school_name','school_location','Degree','CGPA','Field_of_Study','Expected_year_of_grad']
+
 
 
 @csrf_exempt
@@ -194,7 +197,7 @@ class DeleteEFview(DeleteView):
 class UpdateEFView(UpdateView):
 	model = extrafield
 	template_name = 'updateef.html'
-	form_class=Extrafieldform
+	fields = ['field_name','explanation']
 
 class ExtrafieldView(ListView):
 
